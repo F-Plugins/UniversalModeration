@@ -12,7 +12,7 @@ namespace UniversalModeration.DataBase
     {
         Task<List<Ban>> GetBansAsync(string userId);
         Task<Ban> GetBanAsync(string userId);
-        Task UpdateLastBanAsync(string userId, bool unBanned)
+        Task UpdateLastBanAsync(string userId, bool unBanned);
         Task AddBanAsync(Ban ban);
         Task Reload();
     }
