@@ -4,9 +4,9 @@ Description: An universal moderation plugin for openmod that will allow you to m
 Version: 1.0.1
 
 ## Commands
-- bans /bans <userId>: A command to check the bans of a user
+- bans /bans userId: A command to check the bans of a user
   id: UniversalModeration.Commands.BansCommand
-- ban /ban <userName> Optional: (<reason> <time>): A command to ban users
+- ban /ban userName Optional: (reason, time): A command to ban users
   id: UniversalModeration.Commands.BanCommand
 
 ## Permissions
