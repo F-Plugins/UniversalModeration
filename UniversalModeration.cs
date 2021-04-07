@@ -7,7 +7,7 @@ using OpenMod.Core.Plugins;
 using OpenMod.API.Plugins;
 using UniversalModeration.DataBase;
 
-[assembly: PluginMetadata("Feli.UniversalModeration", DisplayName = "UniversalModeration")]
+[assembly: PluginMetadata("Feli.UniversalModeration", DisplayName = "UniversalModeration", Author = "Feli", Website = "")]
 namespace UniversalModeration
 {
     public class UniversalModeration : OpenModUniversalPlugin
@@ -27,12 +27,12 @@ namespace UniversalModeration
         protected override async Task OnLoadAsync()
         {
             await m_MySqlDatabase.Reload();
-            m_Logger.LogInformation("UniversalModeration 1.0.0 has been loaded");
+            m_Logger.LogInformation("UniversalModeration 1.0.3 has been loaded");
         }
 
         protected override Task OnUnloadAsync()
         {
-            m_Logger.LogInformation("UniversalModeration 1.0.0 has been unloaded");
+            m_Logger.LogInformation("UniversalModeration 1.0.3 has been unloaded");
             return Task.CompletedTask;
         }
     }

@@ -123,6 +123,7 @@ namespace UniversalModeration.Commands
                 userId = toBan.Id,
                 punisherId = Context.Actor.Id,
                 banReason = reason,
+                unBanned = false,
                 expireDateTime = expireDate,
                 banDateTime = DateTime.Now
             });

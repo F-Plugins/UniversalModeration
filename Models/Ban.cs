@@ -9,6 +9,7 @@ namespace UniversalModeration.Models
         public string? userId { get; set; }
         public string? punisherId { get; set; }
         public string? banReason { get; set; }
+        public bool unBanned { get; set; }
         public DateTime expireDateTime { get; set; }
         public DateTime banDateTime { get; set; }
     }

@@ -15,7 +15,7 @@ namespace UniversalModeration.DataBase
     public class MySqlDatabase : IMySqlDatabase
     {
         private MySqlConnection m_Connection = new MySqlConnection();
-        private string m_Query(string sql) => sql.Replace("UniversalModeration", m_Configuration.GetSection("plugin_configuration:TableName").Get<string>());
+        private string m_Query(string sql) => sql.Replace("UniversalModerationBans", m_Configuration.GetSection("plugin_configuration:BansTableName").Get<string>());
 
         private readonly IConfiguration m_Configuration;
 
@@ -26,27 +26,33 @@ namespace UniversalModeration.DataBase
 
         public async Task<Ban> GetBanAsync(string userId)
         {
-            const string sql = "SELECT * FROM UniversalModeration WHERE userId = @userId ORDER BY expireDateTime DESC;";
+            const string sql = "SELECT * FROM UniversalModerationBans WHERE userId = @userId AND unBanned = TRUE ORDER BY expireDateTime DESC;";
             return await m_Connection.QueryFirstAsync<Ban>(m_Query(sql), new { userId });
         }
 
         public async Task<List<Ban>> GetBansAsync(string userId)
         {
-            const string sql = "SELECT * FROM UniversalModeration WHERE userId = @userId ORDER BY expireDateTime DESC;";
+            const string sql = "SELECT * FROM UniversalModerationBans WHERE userId = @userId ORDER BY expireDateTime DESC;";
             var query = await m_Connection.QueryAsync<Ban>(m_Query(sql), new { userId }).ConfigureAwait(false);
             return query.ToList();
         }
 
+        public async Task UpdateLastBanAsync(string userId, bool unBanned)
+        {
+            const string sql = "UPDATE UniversalModerationBans SET unBanned = @unBanned WHERE userId = @userId ORDER BY expireDateTime DESC;";
+            await m_Connection.ExecuteAsync(sql, new { unBanned, userId });
+        }
+
         public async Task AddBanAsync(Ban ban)
         {
-            const string sql = "INSERT INTO UniversalModeration (userId, punisherId, banReason, expireDateTime, banDateTime) VALUES (@userId, @punisherId, @banReason, @expireDateTime, @banDateTime);";
+            const string sql = "INSERT INTO UniversalModerationBans (userId, punisherId, banReason, unBanned, expireDateTime, banDateTime) VALUES (@userId, @punisherId, @banReason, @unBanned, @expireDateTime, @banDateTime);";
             await m_Connection.ExecuteAsync(m_Query(sql), ban);
         }
 
         public async Task Reload()
         {
             m_Connection = new MySqlConnection(m_Configuration.GetSection("plugin_configuration:ConnectionString").Get<string>());
-            const string sql = "CREATE TABLE IF NOT EXISTS UniversalModeration (userId VARCHAR(32) NOT NULL, punisherId VARCHAR(32) NOT NULL, banReason VARCHAR(255) NOT NULL, expireDateTime DATETIME NOT NULL, banDateTime DATETIME NOT NULL);";
+            const string sql = "CREATE TABLE IF NOT EXISTS UniversalModerationBans (userId VARCHAR(32) NOT NULL, punisherId VARCHAR(32) NOT NULL, banReason VARCHAR(255) NOT NULL, unBanned BOOLEAN, expireDateTime DATETIME NOT NULL, banDateTime DATETIME NOT NULL);";
             await m_Connection.ExecuteAsync(m_Query(sql));
         }
     }
