@@ -1,7 +1,7 @@
 # UniversalModeration
 Id: Feli.UniversalModeration
 Description: An universal moderation plugin for openmod that will allow you to manage your server (Still on beta)
-Version: 1.0.1
+Version: 1.0.2
 
 ## Commands
 - bans /bans userId: A command to check the bans of a user
