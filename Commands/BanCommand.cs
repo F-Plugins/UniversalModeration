@@ -14,7 +14,7 @@ using UniversalModeration.WebHook;
 namespace UniversalModeration.Commands
 {
     [Command("ban", Priority = OpenMod.API.Prioritization.Priority.Highest)]
-    [CommandDescription("A command to ban users using the UniversalModeration plugin")]
+    [CommandDescription("A command to ban users")]
     [CommandSyntax("/ban <userName> Optional: (<reason> <time>)")]
     public class BanCommand : Command
     {
@@ -59,12 +59,12 @@ namespace UniversalModeration.Commands
             {
                 var time = await Context.Parameters.GetAsync<double>(2);
                 expireDate = DateTime.Now.AddSeconds(time);
-                await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:ban_success", new { Name = toBan.DisplayName, Reason = reason, Time = time }]);
+                await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:ban_success", new { Name = toBan.DisplayName, Reason = reason, Time = time }], System.Drawing.Color.Magenta);
             }
             else
             {
                 expireDate = DateTime.MaxValue;
-                await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:ban_success", new { Name = toBan.DisplayName, Reason = reason, Time = "permanent" }]);
+                await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:ban_success", new { Name = toBan.DisplayName, Reason = reason, Time = "permanent" }], System.Drawing.Color.Magenta);
             }
 
             await m_WebhookService.SendEmbedAsync(new Models.DiscordMessage

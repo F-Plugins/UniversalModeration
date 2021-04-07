@@ -1,0 +1,9 @@
+D:\source\repos\UniversalModeration\bin\Release\netstandard2.0\UniversalModeration.deps.json
+D:\source\repos\UniversalModeration\bin\Release\netstandard2.0\UniversalModeration.dll
+D:\source\repos\UniversalModeration\bin\Release\netstandard2.0\UniversalModeration.pdb
+D:\source\repos\UniversalModeration\obj\Release\netstandard2.0\UniversalModeration.csprojAssemblyReference.cache
+D:\source\repos\UniversalModeration\obj\Release\netstandard2.0\UniversalModeration.AssemblyInfoInputs.cache
+D:\source\repos\UniversalModeration\obj\Release\netstandard2.0\UniversalModeration.AssemblyInfo.cs
+D:\source\repos\UniversalModeration\obj\Release\netstandard2.0\UniversalModeration.csproj.CoreCompileInputs.cache
+D:\source\repos\UniversalModeration\obj\Release\netstandard2.0\UniversalModeration.dll
+D:\source\repos\UniversalModeration\obj\Release\netstandard2.0\UniversalModeration.pdb

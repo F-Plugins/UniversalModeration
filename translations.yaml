@@ -3,3 +3,5 @@ plugin_translations:
   no_reason: "No reason provided"
   ban_success: "Successfully banned {Name}, reason: {Reason} for {Time} seconds"
   reason: "You are banned on this server because: {Reason} for {Time} seconds"
+  no_bans: "No bans for the user {Name} found"
+  bans: "The user was banned by {Punisher} because {Reason} unban date {Time} seconds the day {Day}"

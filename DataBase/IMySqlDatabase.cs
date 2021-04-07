@@ -10,6 +10,7 @@ namespace UniversalModeration.DataBase
     [Service]
     public interface IMySqlDatabase
     {
+        Task<List<Ban>> GetBansAsync(string userId);
         Task<Ban> GetBanAsync(string userId);
         Task AddBanAsync(Ban ban);
         Task Reload();

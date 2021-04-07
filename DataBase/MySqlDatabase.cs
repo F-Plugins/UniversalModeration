@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using UniversalModeration.Models;
+using System.Linq;
 
 namespace UniversalModeration.DataBase
 {
@@ -27,6 +28,13 @@ namespace UniversalModeration.DataBase
         {
             const string sql = "SELECT * FROM UniversalModeration WHERE userId = @userId ORDER BY expireDateTime DESC;";
             return await m_Connection.QueryFirstAsync<Ban>(m_Query(sql), new { userId });
+        }
+
+        public async Task<List<Ban>> GetBansAsync(string userId)
+        {
+            const string sql = "SELECT * FROM UniversalModeration WHERE userId = @userId ORDER BY expireDateTime DESC;";
+            var query = await m_Connection.QueryAsync<Ban>(m_Query(sql), new { userId }).ConfigureAwait(false);
+            return query.ToList();
         }
 
         public async Task AddBanAsync(Ban ban)

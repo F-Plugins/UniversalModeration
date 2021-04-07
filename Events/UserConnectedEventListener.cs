@@ -24,13 +24,13 @@ namespace UniversalModeration.Events
 
         public async Task HandleEventAsync(object? sender, IUserConnectedEvent @event)
         {
-            var find = m_Database.GetBanAsync(@event.User.Id);
+            var find = await m_Database.GetBanAsync(@event.User.Id);
 
-            if(find != null)
+            if (find != null)
             {
-                if(find.Result.expireDateTime > DateTime.Now)
+                if (find.expireDateTime > DateTime.Now)
                 {
-                    await m_UserManager.KickAsync(@event.User, m_StringLocalizer["plugin_translations:reason", new { Reason = find.Result.banReason, Time = DateTime.Now.Second - find.Result.expireDateTime.Second }]);
+                    await m_UserManager.KickAsync(@event.User, m_StringLocalizer["plugin_translations:reason", new { Reason = find.banReason, Time = DateTime.Now.Second + find.expireDateTime.Second }]);
                     return;
                 }
             }
