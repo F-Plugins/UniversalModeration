@@ -4,7 +4,7 @@ Description: An universal moderation plugin for openmod that will allow you to m
 Version: 1.0.0
 
 ## Commands
-- ban /ban <userName> Optional: (<reason> <time>): A command to ban users using the UniversalModeration plugin
+- ban /ban userName Optional: (reason, time): A command to ban users using the UniversalModeration plugin
   id: UniversalModeration.Commands.BanCommand
 
 ## Permissions
