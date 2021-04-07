@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UniversalModeration</id>
+    <version>1.0.0</version>
+    <authors>UniversalModeration</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">EUPL-1.2</license>
+    <licenseUrl>https://licenses.nuget.org/EUPL-1.2</licenseUrl>
+    <description>Package Description</description>
+    <tags>openmod openmod-plugin universal</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Dapper" version="2.0.78" exclude="Build,Analyzers" />
+        <dependency id="MySql.Data" version="8.0.23" exclude="Build,Analyzers" />
+        <dependency id="OpenMod.Core" version="3.0.24" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\source\repos\UniversalModeration\bin\Debug\netstandard2.0\UniversalModeration.dll" target="lib\netstandard2.0\UniversalModeration.dll" />
+  </files>
+</package>

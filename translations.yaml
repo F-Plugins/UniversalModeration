@@ -1,0 +1,5 @@
+plugin_translations:
+  not_found: "User with name {Name} not found"
+  no_reason: "No reason provided"
+  ban_success: "Successfully banned {Name}, reason: {Reason} for {Time} seconds"
+  reason: "You are banned on this server because: {Reason} for {Time} seconds"

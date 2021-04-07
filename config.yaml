@@ -1,0 +1,4 @@
+plugin_configuration:
+  ConnectionString: "SERVER=127.0.0.1;PORT=3306;DATABASE=unturned;UID=root;PASSWORD=admin"
+  TableName: "UniversalModeration"
+  WebHookURL: "URL HERE"
