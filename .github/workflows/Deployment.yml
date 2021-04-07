@@ -28,4 +28,4 @@ jobs:
     - name: Push to NuGet
       run: dotnet nuget push /home/runner/work/UniversalModeration/UniversalModeration/bin/Release/Feli.UniversalModeration.${{ github.event.inputs.version }}.nupkg
              --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
-             --source https://api.nuget.org/v3/index.js
+             --source https://api.nuget.org/v3/index.json
