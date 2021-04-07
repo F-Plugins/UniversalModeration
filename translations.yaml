@@ -2,6 +2,7 @@ plugin_translations:
   not_found: "User with name {Name} not found"
   no_reason: "No reason provided"
   ban_success: "Successfully banned {Name}, reason: {Reason} for {Time} seconds"
+  kick_success: "Successfully kicked {Name}, reason: {Reason}"
   reason: "You are banned on this server because: {Reason} for {Time} seconds"
   no_bans: "No bans for the user {Name} found"
   bans: "The user was banned by {Punisher} because {Reason} unban date {Time} seconds the day {Day}"
