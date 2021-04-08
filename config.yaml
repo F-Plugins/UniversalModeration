@@ -1,6 +1,8 @@
 plugin_configuration:
   ConnectionString: "SERVER=127.0.0.1;PORT=3306;DATABASE=unturned;UID=root;PASSWORD=admin"
   BansTableName: "UniversalModerationBans"
+  WarnsTableName: "UniversalModerationWarns"
   BanWebHookURL: "URL HERE"
   UnBanWebHookURL: "URL HERE"
   KickWebHookURL: "URL HERE"
+  WarnWebHookURL: "URL HERE"
