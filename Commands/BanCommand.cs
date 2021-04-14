@@ -67,6 +67,18 @@ namespace UniversalModeration.Commands
                 await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:ban_success", new { Name = toBan.DisplayName, Reason = reason, Time = "permanent" }], System.Drawing.Color.Magenta);
             }
 
+            await m_UserManager.KickAsync(toBan, m_StringLocalizer["plugin_translations:reason", new { Reason = reason, Time = DateTime.Now.Second - expireDate.Second }]);
+
+            await m_MySqlDatabase.AddBanAsync(new Models.Ban
+            {
+                userId = toBan.Id,
+                punisherId = Context.Actor.Id,
+                banReason = reason,
+                unBanned = false,
+                expireDateTime = expireDate,
+                banDateTime = DateTime.Now
+            });
+
             await m_WebhookService.SendEmbedAsync(new Models.DiscordMessage
             {
                 embeds = new List<Models.Embed>()
@@ -117,18 +129,6 @@ namespace UniversalModeration.Commands
                     }
                 }
             }, m_Configuration.GetSection("plugin_configuration:BanWebHookURL").Get<string>());
-
-            await m_MySqlDatabase.AddBanAsync(new Models.Ban
-            {
-                userId = toBan.Id,
-                punisherId = Context.Actor.Id,
-                banReason = reason,
-                unBanned = false,
-                expireDateTime = expireDate,
-                banDateTime = DateTime.Now
-            });
-
-            await m_UserManager.KickAsync(toBan, m_StringLocalizer["plugin_translations:reason", new { Reason = reason, Time = DateTime.Now.Second - expireDate.Second }]);
         }
     }
 }

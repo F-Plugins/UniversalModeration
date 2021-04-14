@@ -27,12 +27,12 @@ namespace UniversalModeration
         protected override async Task OnLoadAsync()
         {
             await m_MySqlDatabase.Reload();
-            m_Logger.LogInformation("UniversalModeration 1.0.4 has been loaded");
+            m_Logger.LogInformation("UniversalModeration 1.0.5 has been loaded");
         }
 
         protected override Task OnUnloadAsync()
         {
-            m_Logger.LogInformation("UniversalModeration 1.0.4 has been unloaded");
+            m_Logger.LogInformation("UniversalModeration 1.0.5 has been unloaded");
             return Task.CompletedTask;
         }
     }

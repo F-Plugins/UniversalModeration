@@ -12,9 +12,9 @@
     <WarningsAsErrors>nullable</WarningsAsErrors>
     <NoWarn>$(NoWarn);NU1701;NU1702;CS0436</NoWarn>
     <LangVersion>9.0</LangVersion>
-    <Version>1.0.4</Version>
-    <InformationalVersion>1.0.4</InformationalVersion>
-    <PackageVersion>1.0.4</PackageVersion>
+    <Version>1.0.5</Version>
+    <InformationalVersion>1.0.5</InformationalVersion>
+    <PackageVersion>1.0.5</PackageVersion>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -23,9 +23,10 @@
     <PackageLicenseExpression>EUPL-1.2</PackageLicenseExpression>
     <PackageAuthor>Feli</PackageAuthor>
     <PackageTags>openmod openmod-plugin universal</PackageTags>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <GenerateNugetPackage>true</GenerateNugetPackage>  
+    <GenerateNugetPackage>true</GenerateNugetPackage>
+    <AssemblyName>5</AssemblyName>  
   </PropertyGroup>
   	
   <ItemGroup>

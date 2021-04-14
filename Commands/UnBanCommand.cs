@@ -42,9 +42,9 @@ namespace UniversalModeration.Commands
                 throw new UserFriendlyException(m_StringLocalizer["plugin_translations:uban_not_found", new { Name = userId }]);
             }
 
-            await m_MySqlDatabase.UpdateLastBanAsync(userId, true);
-
             await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:unban_success", new { Name = userId }]);
+
+            await m_MySqlDatabase.UpdateLastBanAsync(userId, true);
 
             await m_WebhookService.SendEmbedAsync(new Models.DiscordMessage
             {

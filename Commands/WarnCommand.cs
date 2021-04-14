@@ -52,6 +52,16 @@ namespace UniversalModeration.Commands
                 reason = m_StringLocalizer["plugin_translations:no_reason"];
             }
 
+            await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:warn_success", new { Name = toWarn.DisplayName, Reason = reason }], System.Drawing.Color.Magenta);
+
+            await m_MySqlDatabase.AddWarnAsync(new Models.Warn
+            {
+                userId = toWarn.Id,
+                punisherId = Context.Actor.Id,
+                warnReason = reason,
+                warnDateTime = DateTime.Now
+            });
+
             await m_WebhookService.SendEmbedAsync(new Models.DiscordMessage
             {
                 embeds = new List<Models.Embed>()
@@ -96,16 +106,6 @@ namespace UniversalModeration.Commands
                     }
                 }
             }, m_Configuration.GetSection("plugin_configuration:WarnWebHookURL").Get<string>());
-
-            await m_MySqlDatabase.AddWarnAsync(new Models.Warn
-            {
-                userId = toWarn.Id,
-                punisherId = Context.Actor.Id,
-                warnReason = reason,
-                warnDateTime = DateTime.Now
-            });
-
-            await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:warn_success", new { Name = toWarn.DisplayName, Reason = reason }], System.Drawing.Color.Magenta);
         }
     }
 }

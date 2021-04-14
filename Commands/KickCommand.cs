@@ -50,6 +50,9 @@ namespace UniversalModeration.Commands
                 reason = m_StringLocalizer["plugin_translations:no_reason"];
             }
 
+            await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:kick_success", new { Name = toKick.DisplayName, Reason = reason }], System.Drawing.Color.Magenta);
+            await m_UserManager.KickAsync(toKick, reason);
+
             await m_WebhookService.SendEmbedAsync(new Models.DiscordMessage
             {
                 embeds = new List<Models.Embed>()
@@ -94,8 +97,6 @@ namespace UniversalModeration.Commands
                     }
                 }
             }, m_Configuration.GetSection("plugin_configuration:KickWebHookURL").Get<string>());
-            await Context.Actor.PrintMessageAsync(m_StringLocalizer["plugin_translations:kick_success", new { Name = toKick.DisplayName, Reason = reason }], System.Drawing.Color.Magenta);
-            await m_UserManager.KickAsync(toKick, reason);
         }
     }
 }

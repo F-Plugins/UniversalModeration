@@ -38,13 +38,13 @@ namespace UniversalModeration.DataBase
         public async Task<Ban> GetBanAsync(string userId)
         {
             const string sql = "SELECT * FROM UniversalModerationBans WHERE userId = @userId AND unBanned = TRUE ORDER BY expireDateTime DESC;";
-            return await m_Connection.QueryFirstAsync<Ban>(m_Query(sql, QueryType.BAN), new { userId });
+            return await m_Connection.QueryFirstOrDefaultAsync<Ban>(m_Query(sql, QueryType.BAN), new { userId });
         }
 
         public async Task<List<Ban>> GetBansAsync(string userId)
         {
             const string sql = "SELECT * FROM UniversalModerationBans WHERE userId = @userId ORDER BY expireDateTime DESC;";
-            var query = await m_Connection.QueryAsync<Ban>(m_Query(sql, QueryType.BAN), new { userId }).ConfigureAwait(false);
+            var query = await m_Connection.QueryAsync<Ban>(m_Query(sql, QueryType.BAN), new { userId });
             return query.ToList();
         }
 
@@ -63,7 +63,7 @@ namespace UniversalModeration.DataBase
         public async Task<List<Warn>> GetWarnsAsync(string userId)
         {
             const string sql = "SELECT * FROM UniversalModerationWarns WHERE userId = @userId ORDER BY warnDateTime DESC;";
-            var query = await m_Connection.QueryAsync<Warn>(m_Query(sql, QueryType.WARN), new { userId }).ConfigureAwait(false);
+            var query = await m_Connection.QueryAsync<Warn>(m_Query(sql, QueryType.WARN), new { userId });
             return query.ToList();
         }
 
