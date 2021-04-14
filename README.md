@@ -1,7 +1,7 @@
 # UniversalModeration
 - Id: Feli.UniversalModeration
 - Description: An universal moderation plugin for openmod that will allow you to manage your server
-- Version: 1.0.4
+- Version: 1.0.5
 
 ## Commands
 - warns /warns userId: A command to check the warns of a user
