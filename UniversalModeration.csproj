@@ -26,7 +26,7 @@
     <Version>1.0.5</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateNugetPackage>true</GenerateNugetPackage>
-    <AssemblyName>5</AssemblyName>  
+    <AssemblyName>UniversalModeration</AssemblyName>  
   </PropertyGroup>
   	
   <ItemGroup>

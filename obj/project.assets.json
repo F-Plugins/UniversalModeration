@@ -3319,11 +3319,11 @@
   "project": {
     "version": "1.0.5",
     "restore": {
-      "projectUniqueName": "D:\\source\\repos\\UniversalModeration\\UniversalModeration.csproj",
+      "projectUniqueName": "C:\\Users\\Felipe Master Race\\Downloads\\UniversalModeration-main\\UniversalModeration.csproj",
       "projectName": "Feli.UniversalModeration",
-      "projectPath": "D:\\source\\repos\\UniversalModeration\\UniversalModeration.csproj",
+      "projectPath": "C:\\Users\\Felipe Master Race\\Downloads\\UniversalModeration-main\\UniversalModeration.csproj",
       "packagesPath": "C:\\Users\\Felipe Master Race\\.nuget\\packages\\",
-      "outputPath": "D:\\source\\repos\\UniversalModeration\\obj\\",
+      "outputPath": "C:\\Users\\Felipe Master Race\\Downloads\\UniversalModeration-main\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3386,7 +3386,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4IgghebeO1xrukmM6oUG1KqvPDJRqgupB0hE3f6Dti1F/wbo5yegDvYMnshIoIsXdq75dqpL8g3VpCmIqRlezg==",
+  "dgSpecHash": "TE6Sx2uT+AjbVjm6671R7n/vlqZ8MB6x8Z0+sL2A7nCezzcZlaZ+B0hHciOsmkkoHWpA1zuqBL6GtVA8KUN9/g==",
   "success": true,
-  "projectFilePath": "D:\\source\\repos\\UniversalModeration\\UniversalModeration.csproj",
+  "projectFilePath": "C:\\Users\\Felipe Master Race\\Downloads\\UniversalModeration-main\\UniversalModeration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe Master Race\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\Felipe Master Race\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
