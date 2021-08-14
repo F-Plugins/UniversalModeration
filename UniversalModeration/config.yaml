@@ -1,0 +1,17 @@
+database:
+  ConnectionStrings:
+    default: "Server=127.0.0.1; Database=openmod; Port=3306; User=root; Password=password"
+
+bansConfiguration:
+  normal: # You can change the default ban reason on the translations file 
+    defaultTimeMode: "Time" # Permanent, Kick, None or Time. Time will use the value located bellow here 
+    defaultTime: 100 # Time in seconds. Only works if the timeMode is set to Time
+  autoBans: # Configuration for the auto ban feature
+    vpn:
+      enabled: true # Only enable this if you have an api key
+      apiKey: "" # Get your api key at https://iphub.info/
+      timeMode: "Permanent" # Permanent, Kick, None or Time. Time will use the value located bellow here 
+      time: 5000 # Time in seconds. Only works if the timeMode is set to Time
+    evading:
+      timeMode: "Permanent" # Permanent, Kick, None or Time. Time will use the value located bellow here 
+      time: 5000 # Time in seconds. Only works if the timeMode is set to Time

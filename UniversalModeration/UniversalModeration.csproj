@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>UniversalModeration</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net461</TargetFramework>
+    <Nullable>disable</Nullable>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiscordMessenger" Version="2.0.2" />
+    <PackageReference Include="OpenMod.Core" Version="3.2.0+5ae0579" />
+    <PackageReference Include="OpenMod.EntityFrameworkCore.MySql" Version="3.2.0" />
+    <PackageReference Include="OpenMod.Extensions.Games.Abstractions" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="config.yaml" />
+    <EmbeddedResource Include="translations.yaml" />
+  </ItemGroup>
+
+</Project>

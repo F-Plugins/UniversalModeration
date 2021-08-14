@@ -1,0 +1,6 @@
+rejectionMessages:
+  ban: "You are banned on this server for: {BanData.Reason} until the {BanData.UnbanDate}"
+  kick: "You were kicked from this server for {BanData.Reason}"
+  vpn:
+    banReason: "using a vpn"
+    kick: "You were kicked from this server for using a vpn"
