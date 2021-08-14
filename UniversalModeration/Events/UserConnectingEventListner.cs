@@ -99,8 +99,6 @@ namespace UniversalModeration.Events
             {
                 var vpnType = (EBanType)Enum.Parse(typeof(EBanType), configuration["bansConfiguration:autoBans:vpn:timeMode"]);
 
-                var banType = (EBanType)Enum.Parse(typeof(EBanType), configuration["bansConfiguration:autoBans:evading"]);
-
                 switch (banType)
                 {
                     case EBanType.Kick:
