@@ -99,7 +99,7 @@ namespace UniversalModeration.Events
             {
                 var vpnType = (EBanType)Enum.Parse(typeof(EBanType), configuration["bansConfiguration:autoBans:vpn:timeMode"]);
 
-                switch (banType)
+                switch (vpnType)
                 {
                     case EBanType.Kick:
                         await @event.RejectAsync(stringLocalizer["rejectionMessages:vpn:kick"]);
